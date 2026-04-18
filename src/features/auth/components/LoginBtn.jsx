@@ -1,16 +1,19 @@
-import React from "react";
-import { Button } from "@/components/ui/button";
+import { FaShieldAlt } from "react-icons/fa";
 
-/**
- * LoginBtn component
- * @param {object} props
- * @param {React.ReactNode} props.btnIcon - Icon to display in the button
- * @param {function} props.onClick - Click handler for the button
- */
-const LoginBtn = ({ btnIcon, onClick }) => {
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+
+const LoginBtn = ({ className, btnIcon, onClick }) => {
   return (
-    <Button onClick={onClick} className="w-full flex items-center justify-center gap-2">
-      {btnIcon}
+    <Button
+      className={cn(
+        "inline-flex w-full items-center justify-center gap-2",
+        className,
+      )}
+      variant="primary"
+      onClick={onClick}
+    >
+      {btnIcon ?? <FaShieldAlt />}
       <span>Login</span>
     </Button>
   );
