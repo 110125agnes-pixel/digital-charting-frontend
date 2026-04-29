@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { LuLock, LuBriefcaseMedical } from "react-icons/lu";
+import { FaShieldAlt } from "react-icons/fa";
 
 import InputWithLabel from "@/components/InputWithLabel";
-import LoginBtn from "./LoginBtn";
+import ButtonWithIcon from "@/components/ButtonWithIcon";
 
 function LoginCard() {
   const [medicalIdOrEmail, setMedicalIdOrEmail] = useState("");
@@ -21,7 +22,7 @@ function LoginCard() {
         <InputWithLabel
           id="medicalIdOrEmail"
           label="Medical ID or Email"
-          placeholder="MD-7728-449"
+          placeholder="00XXX"
           value={medicalIdOrEmail}
           onChange={(e) => setMedicalIdOrEmail(e.target.value)}
           inputIcon={<LuBriefcaseMedical />}
@@ -38,7 +39,13 @@ function LoginCard() {
         />
 
         <div className="mt-6">
-          <LoginBtn className="h-12" onClick={handleSubmit} />
+          <ButtonWithIcon
+            btnIcon={<FaShieldAlt />}
+            className="h-12"
+            onClick={handleSubmit}
+          >
+            Login
+          </ButtonWithIcon>
         </div>
       </form>
     </div>
