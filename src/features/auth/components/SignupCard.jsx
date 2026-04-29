@@ -1,9 +1,9 @@
-import * as React from "react";
+import { useState } from "react";
 import InputWithLabel from "@/components/InputWithLabel";
 import { Button } from "@/components/ui/button";
 
 function SignupCard() {
-  const [form, setForm] = React.useState({
+  const [form, setForm] = useState({
     doctorCode: "",
     firstName: "",
     middleName: "",
@@ -16,8 +16,8 @@ function SignupCard() {
     setForm((s) => ({ ...s, [key]: e.target.value }));
 
   return (
-    <div className="max-w-3xl mx-auto p-8 bg-white rounded-xl shadow-sm">
-      <h3 className="text-2xl font-bold mb-6">Create Doctor Account</h3>
+    <div className="mx-auto max-w-3xl rounded-xl bg-white p-8 shadow-sm">
+      <h3 className="mb-6 text-2xl font-bold">Create Doctor Account</h3>
 
       <div className="space-y-4">
         <InputWithLabel
@@ -28,7 +28,7 @@ function SignupCard() {
           onChange={handleChange("doctorCode")}
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           <InputWithLabel
             id="firstName"
             label="FIRST NAME"
@@ -52,7 +52,7 @@ function SignupCard() {
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <InputWithLabel
             id="cellphone"
             label="CELLPHONE NO."
@@ -70,7 +70,11 @@ function SignupCard() {
         </div>
 
         <div className="pt-2">
-          <Button variant="primary" size="lg" className="w-full h-14">
+          <Button
+            variant="primary"
+            size="lg"
+            className="font-manrope h-14 w-full"
+          >
             Create Doctor Account
           </Button>
         </div>
