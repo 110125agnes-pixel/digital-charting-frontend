@@ -1,9 +1,8 @@
-import { FaShieldAlt } from "react-icons/fa";
+import { Button } from "./ui/button";
 
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const LoginBtn = ({ className, btnIcon, onClick }) => {
+function ButtonWithIcon({ children, className, btnIcon, onClick }) {
   return (
     <Button
       className={cn(
@@ -13,10 +12,10 @@ const LoginBtn = ({ className, btnIcon, onClick }) => {
       variant="primary"
       onClick={onClick}
     >
-      {btnIcon ?? <FaShieldAlt />}
-      <span>Login</span>
+      {btnIcon ?? null}
+      <span>{children}</span>
     </Button>
   );
-};
+}
 
-export default LoginBtn;
+export default ButtonWithIcon;
